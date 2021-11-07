@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "cc927b58-6f9d-4f55-b44c-711874980b83": {
+      "ProjectGuid": "cc927b58-6f9d-4f55-b44c-711874980b83",
+      "DisplayName": "Aircompany",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Прочие файлы",
+      "ColorIndex": -1
+    },
+    "27a44d85-619e-4685-bb91-04882523b2f3": {
+      "ProjectGuid": "27a44d85-619e-4685-bb91-04882523b2f3",
+      "DisplayName": "AircompanyTests",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

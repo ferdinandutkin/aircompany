@@ -11,10 +11,8 @@ namespace Aircompany
         public List<Plane> Planes;
 
         public Airport(IEnumerable<Plane> planes)
-        {
-            Planes = planes.ToList();
-        }
-
+            => Planes = planes.ToList();
+   
         public List<PassengerPlane> PassengersPlanes => Planes.OfType<PassengerPlane>().ToList();
 
 

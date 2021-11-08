@@ -35,7 +35,7 @@ namespace AircompanyTests.Tests
         public void GetTransportMilitaryPlanes_IsNotEmpty()
         {
             var airport = new Airport(Planes);
-            Assert.IsNotEmpty(airport.TransportMilitaryPlanes);
+            Assert.IsNotEmpty(airport.TransportMilitaryPlanes.Where(plane => plane.PlaneType == MilitaryType.Transport));
         }
 
         [Test]
@@ -49,9 +49,7 @@ namespace AircompanyTests.Tests
         [Test]
         public void SortByMaxLoadCapacity_ReturnsListSortedByMaxLoadCapacity()
         {
-            var airport = new Airport(Planes);
-            airport = airport.SortByMaxLoadCapacity();
-            
+            var airport = new Airport(Planes).SortByMaxLoadCapacity();
             Assert.IsTrue(airport.Planes.IsOrderedBy(plane => plane.MaxLoadCapacity));
         }
     }

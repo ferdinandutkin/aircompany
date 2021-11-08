@@ -15,18 +15,18 @@ namespace Aircompany
             Planes = planes.ToList();
         }
 
-        public List<PassengerPlane> GetPassengersPlanes() => Planes.OfType<PassengerPlane>().ToList();
+        public List<PassengerPlane> PassengersPlanes => Planes.OfType<PassengerPlane>().ToList();
 
 
-        public List<MilitaryPlane> GetMilitaryPlanes() => Planes.OfType<MilitaryPlane>().ToList();
+        public List<MilitaryPlane> MilitaryPlanes => Planes.OfType<MilitaryPlane>().ToList();
 
 
         public PassengerPlane GetPassengerPlaneWithMaxPassengersCapacity()
             => Planes.OfType<PassengerPlane>().MaxBy(plane => plane.PassengersCapacity);
 
 
-        public List<MilitaryPlane> GetTransportMilitaryPlanes()
-            => Planes.OfType<MilitaryPlane>().Where(plane => plane._type == MilitaryType.Transport).ToList();
+        public List<MilitaryPlane> TransportMilitaryPlanes =>
+            Planes.OfType<MilitaryPlane>().Where(plane => plane._type == MilitaryType.Transport).ToList();
 
 
         public Airport SortByMaxDistance()
@@ -37,7 +37,7 @@ namespace Aircompany
 
 
         public Airport SortByMaxLoadCapacity()
-            => new(Planes.OrderBy(plane => plane.MAXLoadCapacity()));
+            => new(Planes.OrderBy(plane => plane.MaxLoadCapacity));
 
 
         public IEnumerable<Plane> GetPlanes()

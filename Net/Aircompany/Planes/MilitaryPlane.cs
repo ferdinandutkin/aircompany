@@ -28,8 +28,6 @@ namespace Aircompany.Planes
 
 
         public override string ToString()
-            => base.ToString().Replace("}",
-                ", type=" + _type +
-                '}');
+            => base.ToString().Replace("}", $", type={_type}}}");
     }
 }

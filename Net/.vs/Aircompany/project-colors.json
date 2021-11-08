@@ -15,7 +15,12 @@
       "ProjectGuid": "27a44d85-619e-4685-bb91-04882523b2f3",
       "DisplayName": "AircompanyTests",
       "ColorIndex": 1
+    },
+    "5a3811f4-29b4-45d2-b284-e930a85b326f": {
+      "ProjectGuid": "5a3811f4-29b4-45d2-b284-e930a85b326f",
+      "DisplayName": "AircompanyTests",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }

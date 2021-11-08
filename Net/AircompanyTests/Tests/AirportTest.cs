@@ -35,7 +35,7 @@ namespace AircompanyTests.Tests
         public void GetTransportMilitaryPlanes_IsNotEmpty()
         {
             var airport = new Airport(Planes);
-            Assert.IsNotEmpty(airport.GetTransportMilitaryPlanes());
+            Assert.IsNotEmpty(airport.TransportMilitaryPlanes);
         }
 
         [Test]
@@ -51,18 +51,8 @@ namespace AircompanyTests.Tests
         {
             var airport = new Airport(Planes);
             airport = airport.SortByMaxLoadCapacity();
-            var planesSortedByMaxLoadCapacity = airport.Planes.ToList();
-
-            var nextPlaneMaxLoadCapacityIsHigherThanCurrent = true;
-            for (var i = 0; i < planesSortedByMaxLoadCapacity.Count - 1; i++)
-            {
-                var currentPlane = planesSortedByMaxLoadCapacity[i];
-                var nextPlane = planesSortedByMaxLoadCapacity[i + 1];
-                if (currentPlane.MaxLoadCapacity > nextPlane.MaxLoadCapacity)
-                    nextPlaneMaxLoadCapacityIsHigherThanCurrent = false;
-            }
-
-            Assert.That(nextPlaneMaxLoadCapacityIsHigherThanCurrent);
+            
+            Assert.IsTrue(airport.Planes.IsOrderedBy(plane => plane.MaxLoadCapacity));
         }
     }
 }

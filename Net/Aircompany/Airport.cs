@@ -1,14 +1,11 @@
 ﻿using Aircompany.Models;
 using Aircompany.Planes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Aircompany
 {
     public class Airport
     {
-        public List<Plane> Planes;
+        public List<Plane> Planes { get; private set; }
 
         public Airport(IEnumerable<Plane> planes)
             => Planes = planes.ToList();
@@ -24,7 +21,7 @@ namespace Aircompany
 
 
         public List<MilitaryPlane> TransportMilitaryPlanes =>
-            Planes.OfType<MilitaryPlane>().Where(plane => plane._type == MilitaryType.Transport).ToList();
+            Planes.OfType<MilitaryPlane>().Where(plane => plane.Type == MilitaryType.Transport).ToList();
 
 
         public Airport SortByMaxDistance()
@@ -37,9 +34,6 @@ namespace Aircompany
         public Airport SortByMaxLoadCapacity()
             => new(Planes.OrderBy(plane => plane.MaxLoadCapacity));
 
-
-        public IEnumerable<Plane> GetPlanes()
-            => Planes;
 
         public override string ToString()
             => $"Airport{{planes={string.Join(", ", Planes.Select(x => x.Model))}}}";

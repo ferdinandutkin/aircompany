@@ -1,14 +1,18 @@
 ﻿using Aircompany.Models;
 using Aircompany.Planes;
+using System.Collections.Generic;
 
-namespace Aircompany
+namespace AircompanyTests.Tests
 {
-    public class Runner
+    internal class TestDataProvider
     {
-        public static List<Plane> planes = new List<Plane>() {
+
+        private static readonly Plane _maxPassengerCapacityPlane = new PassengerPlane("Boeing-747", 980, 16100, 70500, 242);
+
+        private static readonly List<Plane> _planes = new() {
             new PassengerPlane("Boeing-737", 900, 12000, 60500, 164),
             new PassengerPlane("Boeing-737-800", 940, 12300, 63870, 192),
-            new PassengerPlane("Boeing-747", 980, 16100, 70500, 242),
+            _maxPassengerCapacityPlane,
             new PassengerPlane("Airbus A320", 930, 11800, 65500, 188),
             new PassengerPlane("Airbus A330", 990, 14800, 80500, 222),
             new PassengerPlane("Embraer 190", 870, 8100, 30800, 64),
@@ -20,19 +24,14 @@ namespace Aircompany
             new MilitaryPlane("F-15", 1500, 12000, 10000, MilitaryType.Fighter),
             new MilitaryPlane("F-22", 1550, 13000, 11000, MilitaryType.Fighter),
             new MilitaryPlane("C-130 Hercules", 650, 5000, 110000, MilitaryType.Transport)
-    };
-        public static void Main(string[] args)
-        {
-            Airport airport = new Airport(planes);
-            Airport militaryAirport = new Airport(airport.MilitaryPlanes);
-            Airport passengerAirport = new Airport(airport.PassengersPlanes);
-            Console.WriteLine(militaryAirport
-                              .SortByMaxDistance()
-                              .ToString());
-            Console.WriteLine(passengerAirport
-                              .SortByMaxSpeed()
-                              .ToString());
-            Console.WriteLine(passengerAirport.GetPassengerPlaneWithMaxPassengersCapacity());           
-        }
+        };
+
+        public static readonly object[] GetPassengerPlaneWithMaxPassengersCapacityTestData = { new object[] { _planes, _maxPassengerCapacityPlane } };
+
+        public static readonly object[] SortByMaxLoadCapacityTestData = { _planes };
+
+        public static readonly object[] GetTransportMilitaryPlanesTestData = { _planes };
+
+
     }
 }

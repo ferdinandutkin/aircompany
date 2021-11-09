@@ -8,5 +8,6 @@
 /AircompanyTests/obj
 /AircompanyTests/bin
 *.suo
+Aircompany.sln.DotSettings.user
 /Aircompany.v12.suo
 /AircompanyTests.v12.suo

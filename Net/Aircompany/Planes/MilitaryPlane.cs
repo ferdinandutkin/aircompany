@@ -13,6 +13,7 @@ namespace Aircompany.Planes
 
         public override string ToString()
             => base.ToString().Replace("}", $", type={_type}}}");
+
         public override bool Equals(object obj)
             => obj is MilitaryPlane plane && base.Equals(plane) && _type == plane._type;
 

@@ -24,7 +24,7 @@ namespace Aircompany
             Planes.OfType<MilitaryPlane>().Where(plane => plane.Type == MilitaryType.Transport).ToList();
 
 
-        public Airport SortByMaxDistance()
+        public Airport SortByMaxFlightDistance()
             => new(Planes.OrderBy(w => w.MaxFlightDistance));
 
         public Airport SortByMaxSpeed()

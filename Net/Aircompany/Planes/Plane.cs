@@ -2,11 +2,12 @@
 {
     public abstract class Plane
     {
-        private readonly string _model;
-        private readonly int _maxSpeed;
-        private readonly int _maxFlightDistance;
-        private readonly int _maxLoadCapacity;
+        public string Model => _model;
+        public int MaxSpeed => _maxSpeed;
+        public int MaxFlightDistance => _maxFlightDistance;
 
+        public int MaxLoadCapacity => _maxLoadCapacity;
+         
         public Plane(string model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity)
         {
             _model = model;
@@ -15,11 +16,13 @@
             _maxLoadCapacity = maxLoadCapacity;
         }
 
-        public string Model => _model;
-        public int MaxSpeed => _maxSpeed;
-        public int MaxFlightDistance => _maxFlightDistance;
+        private readonly string _model;
 
-        public int MaxLoadCapacity => _maxLoadCapacity;
+        private readonly int _maxSpeed;
+
+        private readonly int _maxFlightDistance;
+
+        private readonly int _maxLoadCapacity;
 
         public override string ToString()
             => $"Plane{{model='{_model}\', maxSpeed={_maxSpeed}, maxFlightDistance={_maxFlightDistance}, maxLoadCapacity={_maxFlightDistance}}}";

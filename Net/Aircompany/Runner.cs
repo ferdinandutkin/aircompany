@@ -27,7 +27,7 @@ namespace Aircompany
             Airport militaryAirport = new Airport(airport.MilitaryPlanes);
             Airport passengerAirport = new Airport(airport.PassengersPlanes);
             Console.WriteLine(militaryAirport
-                              .SortByMaxDistance()
+                              .SortByMaxFlightDistance()
                               .ToString());
             Console.WriteLine(passengerAirport
                               .SortByMaxSpeed()

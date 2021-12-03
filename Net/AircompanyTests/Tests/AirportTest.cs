@@ -11,21 +11,21 @@ namespace AircompanyTests.Tests
     {
       
         [TestCaseSource(typeof(TestDataProvider), nameof(TestDataProvider.PlanesTestData))]
-        public void TransportMilitaryPlanes_ReturnsOnlyTransportMilitatyPlanes(List<Plane> planes)
+        public void TransportMilitaryPlanes_ReturnsOnlyTransportMilitaryPlanes(List<Plane> planes)
         {
             var airport = new Airport(planes);
             Assert.That(airport.TransportMilitaryPlanes, Has.All.Property(nameof(MilitaryPlane.Type)).EqualTo(MilitaryType.Transport));
         }
 
         [TestCaseSource(typeof(TestDataProvider), nameof(TestDataProvider.PlanesTestData))]
-        public void MilitaryPlanes_ReturnsOnlyMilitatyPlanes(List<Plane> planes)
+        public void MilitaryPlanes_ReturnsOnlyMilitaryPlanes(List<Plane> planes)
         {
             var airport = new Airport(planes);
             Assert.That(airport.MilitaryPlanes, Has.All.TypeOf<MilitaryPlane>());
         }
 
         [TestCaseSource(typeof(TestDataProvider), nameof(TestDataProvider.PlanesTestData))]
-        public void PassengersPlanes_ReturnsOnlyPassangersPlanes(List<Plane> planes)
+        public void PassengersPlanes_ReturnsOnlyPassengersPlanes(List<Plane> planes)
         {
             var airport = new Airport(planes);
             Assert.That(airport.PassengersPlanes, Has.All.TypeOf<PassengerPlane>());

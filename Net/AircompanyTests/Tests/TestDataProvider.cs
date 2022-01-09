@@ -28,8 +28,6 @@ namespace AircompanyTests.Tests
 
         public static readonly object[] GetPassengerPlaneWithMaxPassengersCapacityTestData = { new object[] { _planes, _maxPassengerCapacityPlane } };
 
-        public static readonly object[] SortByMaxLoadCapacityTestData = { _planes };
-
         public static readonly object[] PlanesTestData = { _planes };
 
 
